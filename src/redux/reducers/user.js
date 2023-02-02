@@ -17,7 +17,7 @@ const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case GET_USER:
     return {
-      // ...state, // boa pratica diz ter o spread state. Porém, como minha chave tme um item só, não é preciso.
+      ...state, // boa pratica diz ter o spread state. Porém, como minha chave tme um item só, não é preciso.
       // user: {
       //   email: action.payload.userData, // Salva dentro da chave, mas não passa no teste
       // },

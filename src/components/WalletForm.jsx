@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class WalletForm extends Component {
   render() {
     return (
-      <div>WalletForm</div>
+      <div>
+        <h1>Componente WalletForm</h1>
+      </div>
     );
   }
 }
