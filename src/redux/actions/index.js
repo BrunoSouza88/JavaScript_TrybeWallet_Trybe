@@ -5,12 +5,40 @@ export const GET_WALLET = 'GET_WALLET';
 
 export const GET_CURRENCY = 'GET_CURRENCY';
 
+export const SUM_EXPENSE = 'SUM_EXPENSE';
+
 const getUser = (userData) => ({
   type: GET_USER,
   payload: {
     userData,
   },
 });
+
+const addExpenseList = (expense) => async (dispatch) => { ///
+  const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+  const data = await response.json();
+  const {
+    id,
+    value,
+    description,
+    currency,
+    method,
+    tag,
+  } = expense;
+
+  return dispatch({
+    type: SUM_EXPENSE,
+    payload: {
+      id,
+      value,
+      description,
+      currency,
+      method,
+      tag,
+      exchangeRates: data,
+    },
+  });
+};
 
 const getWallet = (walletData) => ({
   type: GET_WALLET,
@@ -34,4 +62,5 @@ export {
   getUser,
   getWallet,
   fetchAPI,
+  addExpenseList,
 };
