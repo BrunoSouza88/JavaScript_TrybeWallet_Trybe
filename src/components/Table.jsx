@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { buttonDelete } from '../redux/actions';
 
 class Table extends Component {
+  handleDelete = (id) => {
+    const { dispatch } = this.props;
+    dispatch(buttonDelete(id));
+  };
+
   render() {
     const { expenses } = this.props;
     console.log(expenses);
@@ -39,6 +45,15 @@ class Table extends Component {
                       .toFixed(2) }
                   </td>
                   <td>Real</td>
+                  <button>Editar</button>
+                  <td>
+                    <button
+                      data-testid="delete-btn"
+                      onClick={ () => this.handleDelete(element.id) }
+                    >
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             ))

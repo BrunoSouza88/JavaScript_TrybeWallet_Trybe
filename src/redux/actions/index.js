@@ -7,11 +7,18 @@ export const GET_CURRENCY = 'GET_CURRENCY';
 
 export const SUM_EXPENSE = 'SUM_EXPENSE';
 
+export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+
 const getUser = (userData) => ({
   type: GET_USER,
   payload: {
     userData,
   },
+});
+
+const buttonDelete = (id) => ({
+  type: REMOVE_EXPENSE,
+  payload: id,
 });
 
 const addExpenseList = (expense) => async (dispatch) => { ///
@@ -63,4 +70,5 @@ export {
   getWallet,
   fetchAPI,
   addExpenseList,
+  buttonDelete,
 };
