@@ -44,13 +44,14 @@ class Table extends Component {
                       .toFixed(2) }
                   </td>
                   <td>Real</td>
-                  <button>Editar</button>
-                  <button
-                    data-testid="delete-btn"
-                    onClick={ () => this.handleDelete(element.id) }
-                  >
-                    Excluir
-                  </button>
+                  <td>
+                    <button
+                      data-testid="delete-btn"
+                      onClick={ () => this.handleDelete(element.id) }
+                    >
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             ))
