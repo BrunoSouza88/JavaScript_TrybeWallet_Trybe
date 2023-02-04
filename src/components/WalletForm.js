@@ -55,7 +55,6 @@ class WalletForm extends Component {
     const { currencies } = this.props;
     return (
       <div>
-        <h1>Componente WalletForm</h1>
         <label htmlFor="valueinput">
           Valor:
           <input
